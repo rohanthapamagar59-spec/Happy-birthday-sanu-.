@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Love You ❤️</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:linear-gradient(135deg,#ff9ecf,#ff4fa3);
+    font-family:Arial,sans-serif;
+    color:white;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+button{
+    padding:12px 30px;
+    font-size:20px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    margin:10px;
+}
+
+#yes{
+    background:#ff1493;
+    color:white;
+}
+
+#no{
+    background:white;
+    color:#ff1493;
+    position:absolute;
+}
+
+#message{
+    display:none;
+    margin-top:30px;
+    text-align:center;
+    font-size:24px;
+}
+
+.heart{
+    position:fixed;
+    top:-20px;
+    font-size:25px;
+    animation:fall 5s linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>🥺 Do You Love Me? ❤️</h1>
+
+<button id="yes" onclick="yesLove()">Yes 💖</button>
+<button id="no">No 😜</button>
+
+<div id="message">
+    <h2>I Love You Forever My Sanu ❤️🥹</h2>
+    <p>You're My Happiness 💗</p>
+</div>
+
+<script>
+const no=document.getElementById("no");
+
+no.addEventListener("mouseover",()=>{
+    no.style.left=Math.random()*80+"vw";
+    no.style.top=Math.random()*80+"vh";
+});
+
+function yesLove(){
+    document.getElementById("message").style.display="block";
+
+    setInterval(()=>{
+        let h=document.createElement("div");
+        h.className="heart";
+        h.innerHTML="❤️";
+        h.style.left=Math.random()*100+"vw";
+        document.body.appendChild(h);
+
+        setTimeout(()=>h.remove(),5000);
+    },150);
+}
+</script>
+
+</body>
+</html>
